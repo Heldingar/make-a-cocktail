@@ -1,0 +1,28 @@
+<mat-card class="cocktail-card">
+
+  <mat-card-title-group>
+
+    <mat-card-title>{{cocktailObjCard.Name}}</mat-card-title>
+
+    <mat-card-subtitle>{{cocktailObjCard.Ingredients}} <br>
+      Vodka 1 shot,<br>
+      Soda Water 1/3 cup,<br>
+      Fresh Lemon Juice Top<br>
+
+    </mat-card-subtitle>
+    <img mat-card-lg-image src={{cocktailObjCard.Thumb}}>
+
+  </mat-card-title-group>
+  <br>
+  <mat-card-content>
+    {{cocktailObjCard.Instructions}}
+    <mat-card-content>
+
+      <button mat-mini-fab color="" class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        <mat-icon color="warn">favorite</mat-icon>
+      </button>
+    </mat-card-content>
+  </mat-card-content>
+
+</mat-card>
+
