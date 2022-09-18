@@ -1,0 +1,26 @@
+<div>
+  <div class="search-content">
+    <h1>
+      A Random Cocktail
+    </h1>
+
+    <button mat-raised-button color="primary" (click)="randomize()">Randomize</button>
+  </div>
+  <mat-grid-list cols="1" rowHeight="6:5">
+
+    <mat-card class="cocktail-card">
+      <div class="title"> {{cocktail.Name}}</div>
+      <div class="subtitle">{{cocktail.Instructions}}</div>
+      <div class="content">
+        <div class="column">
+          <ul *ngFor="let i of ingridients">
+            <li>{{i}} </li>
+          </ul>
+        </div>
+        <div class="column"><img mat-card-lg-image src={{cocktail.Thumb}}></div>
+      </div>
+    </mat-card>
+
+
+  </mat-grid-list>
+</div>

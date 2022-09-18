@@ -1,4 +1,16 @@
 <mat-card class="cocktail-card">
+  <div class="title"> {{cocktailObjCard.Name}}</div>
+  <div class="subtitle">{{cocktailObjCard.Instructions}}</div>
+  <div class="content">
+    <div class="column">
+      <ul *ngFor="let i of this.ingridients">
+        <li>{{i}} </li>
+      </ul>
+    </div>
+    <div class="column"><img mat-card-lg-image src={{cocktailObjCard.Thumb}}></div>
+  </div>
+</mat-card>
+<!-- <mat-card class="cocktail-card">
 
   <mat-card-title-group>
 
@@ -8,7 +20,6 @@
   <mat-card-subtitle>
     {{this.instructions}}
   </mat-card-subtitle>
-  <!-- <div class="bodyCard"> -->
 
 
   <mat-card-content>
@@ -20,11 +31,10 @@
     </div>
 
     <mat-card-content>
-      <!-- </div> -->
       <button mat-mini-fab color="" class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
         <mat-icon color="warn">favorite</mat-icon>
       </button>
     </mat-card-content>
   </mat-card-content>
 
-</mat-card>
+</mat-card> -->

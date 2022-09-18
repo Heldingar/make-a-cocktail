@@ -1,0 +1,39 @@
+.example-card {
+  max-width: 400px;
+  margin-bottom: 8px;
+}
+
+mat-card {
+  /* padding:10px; */
+  margin-bottom: 2em;
+
+}
+
+li {
+  list-style-type: "💜";
+
+}
+
+mat-card {
+  display: inline-block;
+}
+.title{
+  font-size: 22px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.subtitle{
+  margin-bottom: 10px;
+  margin-top: 10px;
+
+  color: rgba(200,200,200,0.9);
+  margin: 5px;
+}
+.column {
+  text-align: left;
+  /* position: relative; */
+  float: left;
+  width: 50%;
+  font-size: 12px;
+
+}
