@@ -1,4 +1,4 @@
-import { Component, Input,OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-cocktailcard',
@@ -6,11 +6,21 @@ import { Component, Input,OnInit } from '@angular/core';
   styleUrls: ['./cocktailcard.component.css']
 })
 export class CocktailcardComponent implements OnInit {
-@Input() cocktailObjCard:any;
+  @Input() cocktailObjCard: any;
+  @Input() i: any;
 
-  constructor() { }
+
+  ingridients: string[]
+
+  constructor() {
+    this.ingridients = []
+  }
 
   ngOnInit(): void {
+    this.ingridients = this.cocktailObjCard.Ingredients.split(",")
+    this.ingridients.pop()
+    console.log(this.ingridients);
+
   }
 
 }

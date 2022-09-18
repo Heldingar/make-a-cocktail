@@ -19,6 +19,8 @@ import {MatCardModule} from '@angular/material/card';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RandomComponent } from './random/random.component';
+import {MatChipsModule} from '@angular/material/chips';
 
 
 @NgModule({
@@ -27,7 +29,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NavbarComponent,
     SearchComponent,
     CocktailcardComponent,
-    SidebarComponent
+    SidebarComponent,
+    RandomComponent
   ],
   imports: [
     ReactiveFormsModule,
@@ -43,7 +46,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatSidenavModule,
     AppRoutingModule,
     FormsModule,
-     BrowserAnimationsModule
+     BrowserAnimationsModule,
+     MatChipsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

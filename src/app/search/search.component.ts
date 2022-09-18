@@ -12,33 +12,34 @@ import { FormControl } from '@angular/forms';
 export class SearchComponent implements OnInit {
 
   apiUrl = "https://cocktails-db-backend.vercel.app/api/name/"
-  urlRandom = "https://thecocktaildb.com/api/json/v1/1/random.php"
   anyResults: boolean = false
   len: any
   selectField: FormControl = new FormControl()
-  cocktailObj: any = { "Name": "Prova", "Ingredients": "lista", "Instructions": "descr", "Thumb": "https://www.thecocktaildb.com/images/media/drink/125w0o1630407389.jpg" }
+  cocktailObj: any = { }
   constructor(private http: HttpClient) {
   }
   ngOnInit(): void {
 
   }
 
-  search(name: string) :any{
+  search(name: string): any {
 
     this.http.get<any>(this.apiUrl + name).subscribe(data => {
+      this.len = data.data.length
       if (this.len < 1) { console.log("Nessun risultato"); return this.anyResults = false }
-      this.len = data.data
       this.anyResults = true
 
-      this.cocktailObj.name = data.data[0]["Name"];
+      this.cocktailObj = data.data
 
-      // console.log(this.cocktailObj);
-      return this.cocktailObj
+      return 0
     })
 
 
   }
+  sendDetails(data: any) {
+    console.log(data);
 
+  }
 
 
 

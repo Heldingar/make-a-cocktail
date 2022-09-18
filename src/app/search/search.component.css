@@ -16,12 +16,14 @@ mat-card-subtitle {
   width: 100%;
   text-align: center;
 }
-
+.grid{
+  margin-top: 100px;
+}
 button {
   position: absolute;
 
   top: 25%;
-  margin-left: 2em;
+  margin-left: 1em;
 }
 
 .example-full-width {

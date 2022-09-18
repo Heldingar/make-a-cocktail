@@ -2,22 +2,25 @@
   <div class="search-content">
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>Cocktail's Name</mat-label>
-    <input matInput placeholder="Spritz" value=" " #name>
+    <input matInput placeholder="Spritz" value="Spritz" #name>
   </mat-form-field>
 
   <button mat-raised-button color="primary" (click)="search(name.value)">Search</button>
 </div>
 </form>
-<div *ngIf="anyResults; else noResults">
+
+<br>
+<div class="grid" *ngIf="anyResults; else noResults">
   <mat-grid-list  cols="2" rowHeight="2:1">
 
-    <div *ngFor="let i of len">
+    <div *ngFor="let cocktail of this.cocktailObj">
       <mat-grid-tile>
-        <app-cocktailcard [cocktailObjCard]="cocktailObj"></app-cocktailcard>
+        <app-cocktailcard [cocktailObjCard]="cocktail"></app-cocktailcard>
       </mat-grid-tile>
     </div>
 
   </mat-grid-list>
+
 </div>
 <ng-template #noResults>
   <div class="bodyNotFound">

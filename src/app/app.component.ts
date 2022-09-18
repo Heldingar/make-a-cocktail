@@ -1,18 +1,18 @@
-import {MediaMatcher} from '@angular/cdk/layout';
-import {ChangeDetectorRef, Component, OnChanges, OnDestroy, SimpleChanges} from '@angular/core';
+import { MediaMatcher } from '@angular/cdk/layout';
+import { ChangeDetectorRef, Component, OnChanges, OnDestroy, SimpleChanges } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnDestroy{
+export class AppComponent implements OnDestroy {
   title = 'cocktails-heldin';
   mobileQuery: MediaQueryList;
-  showSidebar:boolean = false
-  fillerNav = Array.from({length: 50}, (_, i) => `Nav Item ${i + 1}`);
-
+  showSidebar: boolean = false
+  fillerNav = Array.from({ length: 50 }, (_, i) => `Nav Item ${i + 1}`);
+  showCopyUrl:boolean = false
   fillerContent = Array.from(
-    {length: 50},
+    { length: 50 },
     () =>
       `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
@@ -29,10 +29,15 @@ export class AppComponent implements OnDestroy{
     this.mobileQuery.addListener(this._mobileQueryListener);
   }
 
-  funShowSidebar(e:boolean){
-    this.showSidebar = e
+  funShowSidebar(e: boolean) {
+    this.showSidebar = !this.showSidebar
   }
-
+  removeCopyUrl() {
+    this.showCopyUrl = false
+  }
+  funShowCopyUrl() {
+    this.showCopyUrl = true
+  }
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);
   }

@@ -1,0 +1,10 @@
+<p>random works!</p>
+<mat-grid-list  cols="2" rowHeight="2:1">
+
+  <div *ngFor="let cocktail of this.cocktails">
+    <mat-grid-tile>
+      <app-cocktailcard [cocktailObjCard]="cocktail"></app-cocktailcard>
+    </mat-grid-tile>
+  </div>
+
+</mat-grid-list>
