@@ -1,4 +1,4 @@
-img {
+/* img {
   margin-left: 25%;
 }
 
@@ -9,7 +9,7 @@ mat-card-title {
 mat-card-subtitle {
   margin-left: 10%;
 
-}
+} */
 
 .search-form {
   position: absolute;
@@ -17,7 +17,11 @@ mat-card-subtitle {
   text-align: center;
 }
 .grid{
-  margin-top: 100px;
+  margin-top: 5em;
+}
+mat-grid-tile{
+   width: 150%;
+  /* padding: 3em; */
 }
 button {
   position: absolute;
@@ -26,7 +30,7 @@ button {
   margin-left: 1em;
 }
 
-.example-full-width {
+.full-width {
   top: 10px;
   width: 50%;
 }

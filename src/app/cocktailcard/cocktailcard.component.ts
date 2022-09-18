@@ -11,15 +11,17 @@ export class CocktailcardComponent implements OnInit {
 
 
   ingridients: string[]
-
+  instructions:string
   constructor() {
     this.ingridients = []
+    this.instructions=""
   }
 
   ngOnInit(): void {
     this.ingridients = this.cocktailObjCard.Ingredients.split(",")
     this.ingridients.pop()
-    console.log(this.ingridients);
+
+    this.instructions=this.cocktailObjCard.Instructions
 
   }
 

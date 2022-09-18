@@ -3,20 +3,24 @@
   <mat-card-title-group>
 
     <mat-card-title>{{cocktailObjCard.Name}} {{i}}</mat-card-title>
-
-    <mat-card-subtitle>
-      <ul *ngFor="let i of this.ingridients">
-        <li>{{i}} </li>
-      </ul>
-    </mat-card-subtitle>
-    <img mat-card-lg-image src={{cocktailObjCard.Thumb}}>
-
   </mat-card-title-group>
   <br>
-  <mat-card-content>
-    {{cocktailObjCard.Instructions}}
-    <mat-card-content>
+  <mat-card-subtitle>
+    {{this.instructions}}
+  </mat-card-subtitle>
+  <!-- <div class="bodyCard"> -->
 
+
+  <mat-card-content>
+    <div class="column">    <ul *ngFor="let i of this.ingridients">
+      <li>{{i}} </li>
+    </ul>
+    </div>
+    <div class="column"> <img mat-card-lg-image src={{cocktailObjCard.Thumb}}>
+    </div>
+
+    <mat-card-content>
+      <!-- </div> -->
       <button mat-mini-fab color="" class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
         <mat-icon color="warn">favorite</mat-icon>
       </button>

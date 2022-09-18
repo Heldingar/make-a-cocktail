@@ -9,7 +9,7 @@ import * as ClipboardJS from 'clipboard';
 })
 export class NavbarComponent implements OnInit {
   @Output() showSidebarEvent = new EventEmitter<boolean>()
-  @Output() showCopyUrlEvent = new EventEmitter<boolean>()
+  // @Output() showCopyUrlEvent = new EventEmitter<boolean>()
   angularRoute:string=""
   url:string=""
   domainAndApp:string=""
@@ -28,11 +28,8 @@ export class NavbarComponent implements OnInit {
 
   }
   share() {
-    this.showCopyUrlEvent.emit(true)
 
-
-
-  }
+ }
   showSidebar() {
 
     this.showSidebarEvent.emit(this.showed)

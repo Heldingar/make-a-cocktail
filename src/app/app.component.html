@@ -5,16 +5,8 @@
 
   <mat-drawer-content>
 
-    <app-navbar (showSidebarEvent)="funShowSidebar($event)" (showCopyUrlEvent)="funShowCopyUrl()"></app-navbar>
-    <mat-chip-list *ngIf="showCopyUrl" >
-      <mat-chip (removed)="removeCopyUrl()">
+    <app-navbar (showSidebarEvent)="funShowSidebar($event)"></app-navbar>
 
-        URL copied successfully!
-        <button matChipRemove>
-          <mat-icon>cancel</mat-icon>
-        </button>
-      </mat-chip>
-    </mat-chip-list>
 
     <app-search></app-search>
     <!-- fine -->
@@ -27,11 +19,3 @@
 </mat-drawer-container>
 
 
-<!--
-
- |\__/,|   (`\
- |_ _  |.--.) )
- ( T   )     /
-(((^_(((/(((_/  Heldin
-
-      -->

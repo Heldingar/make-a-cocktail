@@ -15,13 +15,22 @@ export class SearchComponent implements OnInit {
   anyResults: boolean = false
   len: any
   selectField: FormControl = new FormControl()
-  cocktailObj: any = { }
-  constructor(private http: HttpClient) {
+  cocktailObj: any = {}
+
+  mybreakpoint: number=1;
+  rowH: string="3:1";
+
+  constructor(private http: HttpClient, ) {
   }
   ngOnInit(): void {
+    this.mybreakpoint = (window.innerWidth <= 600) ? 1 : 2;
+    this.rowH = (window.innerWidth <= 600) ? "6:9" :"4:3";
 
   }
-
+  handleSize(event:any) {
+    this.mybreakpoint = (event.target.innerWidth <= 600) ? 1 : 2;
+    this.rowH = (event.target.innerWidth <= 600) ? "6:9" :"4:3";
+  }
   search(name: string): any {
 
     this.http.get<any>(this.apiUrl + name).subscribe(data => {

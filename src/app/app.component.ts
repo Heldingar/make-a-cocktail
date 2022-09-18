@@ -10,7 +10,6 @@ export class AppComponent implements OnDestroy {
   mobileQuery: MediaQueryList;
   showSidebar: boolean = false
   fillerNav = Array.from({ length: 50 }, (_, i) => `Nav Item ${i + 1}`);
-  showCopyUrl:boolean = false
   fillerContent = Array.from(
     { length: 50 },
     () =>
@@ -32,12 +31,8 @@ export class AppComponent implements OnDestroy {
   funShowSidebar(e: boolean) {
     this.showSidebar = !this.showSidebar
   }
-  removeCopyUrl() {
-    this.showCopyUrl = false
-  }
-  funShowCopyUrl() {
-    this.showCopyUrl = true
-  }
+
+
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);
   }

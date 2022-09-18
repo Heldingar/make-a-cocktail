@@ -1,25 +1,39 @@
 <form class="search-form">
   <div class="search-content">
-  <mat-form-field class="example-full-width" appearance="fill">
-    <mat-label>Cocktail's Name</mat-label>
-    <input matInput placeholder="Spritz" value="Spritz" #name>
-  </mat-form-field>
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Cocktail's Name</mat-label>
+      <input matInput placeholder="Spritz" value="Spritz" #name>
+    </mat-form-field>
 
-  <button mat-raised-button color="primary" (click)="search(name.value)">Search</button>
-</div>
+    <button mat-raised-button color="primary" (click)="search(name.value)">Search</button>
+  </div>
 </form>
 
-<br>
 <div class="grid" *ngIf="anyResults; else noResults">
-  <mat-grid-list  cols="2" rowHeight="2:1">
+  <mat-grid-list [cols]="mybreakpoint"  [rowHeight]="rowH" (window:resize)="handleSize($event)">
 
     <div *ngFor="let cocktail of this.cocktailObj">
       <mat-grid-tile>
         <app-cocktailcard [cocktailObjCard]="cocktail"></app-cocktailcard>
       </mat-grid-tile>
     </div>
-
   </mat-grid-list>
+
+  <!-- <mat-card>
+    <mat-card-content>
+      <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="6px">
+        <div></div>
+        <br />
+      </div>
+    </mat-card-content>
+  </mat-card>
+  <mat-grid-list [cols]="mybreakpoint" rowHeight="4:0.5" (window:resize)="handleSize($event)"
+    *ngFor="let cocktail of this.cocktailObj">
+    <mat-grid-tile>
+      <app-cocktailcard [cocktailObjCard]="cocktail"></app-cocktailcard>
+    </mat-grid-tile>
+  </mat-grid-list> -->
+
 
 </div>
 <ng-template #noResults>
@@ -28,7 +42,3 @@
     <h1>There are no cocktails for your search</h1>
   </div>
 </ng-template>
-
-
-
-<!-- se ce risultato mostra griglia sennò msg errore -->
